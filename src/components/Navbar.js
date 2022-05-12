@@ -11,13 +11,12 @@ const Navbar = ({ title }) => {
           <form className="d-flex">
             <input
               className="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
+              type="number"
+              min="1"
+              max="126"
+              placeholder="Input ID"
             />
-            <button className="btn btn-outline-success" type="submit">
-              Search
-            </button>
+            <button className="btn btn-outline-success">Search</button>
           </form>
         </div>
       </nav>
