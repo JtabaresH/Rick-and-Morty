@@ -15,7 +15,7 @@ const Characters = ({ url }) => {
       <div className="card">
         <h4>{character.name}</h4>
         <img src={character.image} alt="" />
-        <span><b>Status:</b> {character.status} - {character.type}</span>
+        <span><b>{character.status} - {character.type}</b></span>
       </div>
     </li>
   );
