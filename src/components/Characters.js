@@ -17,6 +17,7 @@ const Characters = ({ url }) => {
         <img src={character.image} alt="" />
         <span><b>Status:</b> {character.status}</span>
         <span><b>Specie/Gender:</b> {character.species} - {character.gender}</span>
+        <span><b>Episodes where appear:</b> {character.episode?.length}</span>
       </div>
     </li>
   );
