@@ -14,7 +14,7 @@ const Characters = ({ url }) => {
     <li>
       <div className="card">
         <h4>{character.name}</h4>
-        <img src={character.image} alt="" />
+        <img src={character.image} alt="" style={{maxWidth: "200px"}}/>
         <span><b>Status:</b> {character.status}</span>
         <span><b>Specie/Gender:</b> {character.species} - {character.gender}</span>
         <span><b>Episodes where appear:</b> {character.episode?.length}</span>
