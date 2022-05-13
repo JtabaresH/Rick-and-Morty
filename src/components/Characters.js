@@ -9,7 +9,7 @@ const Characters = ({ url }) => {
       setCharacter(res.data);
     });
   }, []);
-  console.log(character);
+
   return (
     <div>
       <h1>{character.name}</h1>
