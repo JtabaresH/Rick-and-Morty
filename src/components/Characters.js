@@ -9,13 +9,13 @@ const Characters = ({ url }) => {
       setCharacter(res.data);
     });
   }, [url]);
-console.log(character)
+  console.log(character);
   return (
     <li>
       <div className="card">
         <h4>{character.name}</h4>
         <img src={character.image} alt="" />
-        <span>{character.status}</span>
+        <span><b>Status:</b> {character.status}</span>
       </div>
     </li>
   );
