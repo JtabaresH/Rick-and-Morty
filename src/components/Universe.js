@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Characters from './Characters';
 
 const Universe = () => {
   /* Returns a random number between min (included) and max (excluded) */
@@ -7,7 +8,6 @@ const Universe = () => {
   const [location, setLocation] = useState([]);
   const [id, setID] = useState();
   const [charactersURL, setCharactersURL] = useState([]);
-  const [character, setCharacter] = useState([]);
 
   useEffect(() => {
     axios
@@ -51,7 +51,7 @@ const Universe = () => {
 
       <ul>
         {charactersURL?.map((URLs) => (
-          <li key={URLs}>{URLs}</li>
+          <Characters url={URLs} key={URLs} />
         ))}
       </ul>
     </div>
