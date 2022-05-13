@@ -21,17 +21,18 @@ const Universe = () => {
   const searchUniverse = () => {
     axios.get(`https://rickandmortyapi.com/api/location/${id}`).then((res) => {
       setLocation(res.data);
+      setCharactersURL(res.data.residents);
     });
   };
 
-  /*   useEffect(() => {
+  useEffect(() => {
     searchUniverse();
-  }, [id]); */
+  }, [id]);
 
   return (
     <div className="container">
       <div>
-        {/* <input
+        <input
           className="form-control me-2"
           type="range"
           min="1"
@@ -39,7 +40,7 @@ const Universe = () => {
           step="1"
           onChange={(e) => setID(e.target.value)}
           placeholder="Input ID"
-        /> */}
+        />
         <input
           className="form-control me-2"
           type="number"
@@ -48,11 +49,9 @@ const Universe = () => {
           onChange={(e) => setID(e.target.value)}
           placeholder="Input ID"
         />
-        {
-          <button className="btn btn-outline-success" onClick={searchUniverse}>
-            Search
-          </button>
-        }
+        <button className="btn btn-outline-success" onClick={searchUniverse}>
+          Search
+        </button>
       </div>
       <h1>{location.name}</h1>
       <span>
