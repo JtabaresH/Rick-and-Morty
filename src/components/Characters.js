@@ -16,7 +16,7 @@ const Characters = ({ url }) => {
         <h4>{character.name}</h4>
         <img src={character.image} alt="" />
         <span><b>Status:</b> {character.status}</span>
-        <span><b>Gender/Type:</b> {character.species} - {character.gender}</span>n
+        <span><b>Gender/Type:</b> {character.species} - {character.gender}</span>
       </div>
     </li>
   );
