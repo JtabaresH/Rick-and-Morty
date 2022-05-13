@@ -24,23 +24,25 @@ const Universe = () => {
     });
   };
 
-  console.log(location);
+  useEffect(() => {
+    searchUniverse();
+  }, [id]);
 
   return (
     <div className="container">
       <div>
         <input
           className="form-control me-2"
-          type="number"
+          type="range"
           min="1"
           max="126"
           step="1"
           onChange={(e) => setID(e.target.value)}
           placeholder="Input ID"
         />
-        <button className="btn btn-outline-success" onClick={searchUniverse}>
+        {/* <button className="btn btn-outline-success" onClick={searchUniverse}>
           Search
-        </button>
+        </button> */}
       </div>
 
       <h1>{location.name}</h1>
