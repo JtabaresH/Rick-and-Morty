@@ -8,13 +8,15 @@ const Characters = ({ url }) => {
     axios.get(url).then((res) => {
       setCharacter(res.data);
     });
-  }, []);
+  }, [url]);
 
   return (
-    <div>
-      <h1>{character.name}</h1>
-      <img src={character.image} alt="" />
-    </div>
+    <li>
+      <div className="card">
+        <h4>{character.name}</h4>
+        <img src={character.image} alt="" />
+      </div>
+    </li>
   );
 };
 

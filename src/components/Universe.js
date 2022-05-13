@@ -24,14 +24,14 @@ const Universe = () => {
     });
   };
 
-  useEffect(() => {
+  /*   useEffect(() => {
     searchUniverse();
-  }, [id]);
+  }, [id]); */
 
   return (
     <div className="container">
       <div>
-        <input
+        {/* <input
           className="form-control me-2"
           type="range"
           min="1"
@@ -39,18 +39,26 @@ const Universe = () => {
           step="1"
           onChange={(e) => setID(e.target.value)}
           placeholder="Input ID"
+        /> */}
+        <input
+          className="form-control me-2"
+          type="number"
+          min="1"
+          max="126"
+          onChange={(e) => setID(e.target.value)}
+          placeholder="Input ID"
         />
-        {/* <button className="btn btn-outline-success" onClick={searchUniverse}>
-          Search
-        </button> */}
+        {
+          <button className="btn btn-outline-success" onClick={searchUniverse}>
+            Search
+          </button>
+        }
       </div>
-
       <h1>{location.name}</h1>
       <span>
         <b>Type:</b> {location.type} <b>Dimension:</b> {location.dimension}{' '}
         <b>Population:</b> {location.residents?.length}
       </span>
-
       <ul>
         {charactersURL?.map((URLs) => (
           <Characters url={URLs} key={URLs} />
