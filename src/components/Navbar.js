@@ -8,7 +8,6 @@ const Navbar = ({ title }) => {
           <a href="/" className="navbar-brand">
             <h1>{title}</h1>
           </a>
-          
         </div>
       </nav>
     </div>
