@@ -10,13 +10,19 @@ const Characters = ({ url }) => {
     });
   }, [url]);
   return (
-      <div className="card" style={{maxWidth: "250px"}}>
-        <h4>{character.name}</h4>
-        <img src={character.image} alt="" />
-        <span><b>Status:</b> {character.status}</span>
-        <span><b>Specie/Gender:</b> {character.species} - {character.gender}</span>
-        <span><b>Episodes where appear:</b> {character.episode?.length}</span>
-      </div>
+    <div className="card" style={{ maxWidth: '250px' }}>
+      <h5 style={{ textAlign: 'center' }}>{character.name}</h5>
+      <img src={character.image} alt="" />
+      <span>
+        <b>Status:</b> {character.status}
+      </span>
+      <span>
+        <b>Specie/Gender:</b> {character.species} - {character.gender}
+      </span>
+      <span>
+        <b>Episodes where appear:</b> {character.episode?.length}
+      </span>
+    </div>
   );
 };
 

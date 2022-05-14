@@ -31,7 +31,7 @@ const Universe = () => {
 
   return (
     <div className="container">
-      <div>
+      <div style={{ textAlign: 'center' }}>
         <span>
           <b>Swipe to move quickly through the multiverse</b>
         </span>
@@ -68,7 +68,7 @@ const Universe = () => {
         <b>Population:</b> {location.residents?.length}
       </span>
 
-      <div className="row">
+      <div className="row" style={{ gap: '10px' }}>
         {charactersURL?.map((URLs) => (
           <Characters url={URLs} key={URLs} />
         ))}

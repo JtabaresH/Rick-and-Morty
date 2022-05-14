@@ -3,11 +3,9 @@ import React from 'react';
 const Navbar = ({ title }) => {
   return (
     <div>
-      <nav className="navbar navbar-light bg-light">
+      <nav className="navbar-light bg-light">
         <div className="container-fluid">
-          <a href="/" className="navbar-brand">
-            <h1>{title}</h1>
-          </a>
+          <h1 style={{ textAlign: 'center' }}>{title}</h1>
         </div>
       </nav>
     </div>
