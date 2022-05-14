@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Characters from './Characters';
+import Pagination from './Pagination';
 
 const Universe = () => {
   /* Returns a random number between min (included) and max (excluded) */
@@ -50,7 +51,6 @@ const Universe = () => {
           max="126"
           step="1"
           onChange={(e) => setID2(e.target.value)}
-          placeholder="Input ID"
         />
         <span>
           <b>Insert the ID of a universe</b>
@@ -67,19 +67,21 @@ const Universe = () => {
           Search
         </button>
       </div>
-      
+
       <div style={{ textAlign: 'center' }}>
-      <h1>{location.name}</h1>
-      <span>
-        <b>Type:</b> {location.type} <b>Dimension:</b> {location.dimension}{' '}
-        <b>Population:</b> {location.residents?.length}
-      </span>
+        <h1>{location.name}</h1>
+        <span>
+          <b>Type:</b> {location.type} <b>Dimension:</b> {location.dimension}{' '}
+          <b>Population:</b> {location.residents?.length}
+        </span>
       </div>
 
-      <div className="row" style={{ gap: '10px', justifyContent: "center" }}>
+      <div className="row justify-content-center" style={{ gap: '10px' }}>
+        <Pagination />
         {charactersURL?.map((URLs) => (
           <Characters url={URLs} key={URLs} />
         ))}
+        <Pagination />
       </div>
     </div>
   );
