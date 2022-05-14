@@ -41,7 +41,6 @@ const Universe = () => {
           min="1"
           max="126"
           step="1"
-          id="portal"
           value={id}
           onChange={(e) => setID(e.target.value)}
           placeholder="Input ID"
@@ -62,11 +61,14 @@ const Universe = () => {
           Search
         </button>
       </div>
+      
+      <div style={{ textAlign: 'center' }}>
       <h1>{location.name}</h1>
       <span>
         <b>Type:</b> {location.type} <b>Dimension:</b> {location.dimension}{' '}
         <b>Population:</b> {location.residents?.length}
       </span>
+      </div>
 
       <div className="row" style={{ gap: '10px' }}>
         {charactersURL?.map((URLs) => (
