@@ -32,20 +32,29 @@ const Universe = () => {
   return (
     <div className="container">
       <div>
+        <span>
+          <b>Swipe to move quickly through the multiverse</b>
+        </span>
         <input
           className="form-control me-2"
           type="range"
           min="1"
           max="126"
           step="1"
+          id="portal"
+          value={id}
           onChange={(e) => setID(e.target.value)}
           placeholder="Input ID"
         />
+        <span>
+          <b>Insert the ID of a universe</b>
+        </span>
         <input
           className="form-control me-2"
           type="number"
           min="1"
           max="126"
+          value={id}
           onChange={(e) => setID(e.target.value)}
           placeholder="Input ID"
         />
@@ -58,11 +67,12 @@ const Universe = () => {
         <b>Type:</b> {location.type} <b>Dimension:</b> {location.dimension}{' '}
         <b>Population:</b> {location.residents?.length}
       </span>
-      <ul>
+
+      <div className="row">
         {charactersURL?.map((URLs) => (
           <Characters url={URLs} key={URLs} />
         ))}
-      </ul>
+      </div>
     </div>
   );
 };

@@ -9,17 +9,14 @@ const Characters = ({ url }) => {
       setCharacter(res.data);
     });
   }, [url]);
-  console.log(character);
   return (
-    <li>
-      <div className="card">
+      <div className="card" style={{maxWidth: "250px"}}>
         <h4>{character.name}</h4>
-        <img src={character.image} alt="" style={{maxWidth: "250px"}}/>
+        <img src={character.image} alt="" />
         <span><b>Status:</b> {character.status}</span>
         <span><b>Specie/Gender:</b> {character.species} - {character.gender}</span>
         <span><b>Episodes where appear:</b> {character.episode?.length}</span>
       </div>
-    </li>
   );
 };
 
