@@ -56,7 +56,7 @@ const Universe = () => {
           value={id2}
           onChange={(e) => setID2(e.target.value)}
         />
-        <span class="input-group-text">{id2}</span>
+        <span className="input-group-text">{id2}</span>
         </div>
         <br />
         <span>
