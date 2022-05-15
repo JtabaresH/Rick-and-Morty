@@ -3,13 +3,12 @@ import axios from 'axios';
 import Characters from './Characters';
 import Pagination from './Pagination';
 
-
 const Universe = () => {
   /* Returns a random number between min (included) and max (excluded) */
-  const ramdomizer = Math.floor(Math.random() * (127 - 1)) + 1;
+  const ramdomizer = Math.floor(Math.random() * (126 + 1));
   const [location, setLocation] = useState([]);
-  const [id, setID] = useState();
-  const [id2, setID2] = useState();
+  const [id, setID] = useState("");
+  const [id2, setID2] = useState("");
   const [charactersURL, setCharactersURL] = useState([]);
 
   useEffect(() => {
@@ -43,38 +42,41 @@ const Universe = () => {
     <div className="container">
       <div style={{ textAlign: 'center' }}>
         <span>
-          <b style={{color: "white"}}>Swipe to move quickly through the multiverse</b>
+          <b style={{ color: 'white' }}>
+            Swipe to move quickly through the multiverse
+          </b>
         </span>
         <input
-          style={{backgroundColor: "rgb(67, 60, 104)"}}
+          style={{ backgroundColor: 'rgb(67, 60, 104)' }}
           className="form-control me-2"
           type="range"
           min="1"
           max="126"
           step="1"
-          
           onChange={(e) => setID2(e.target.value)}
-        /> <br/>
+        />{' '}
+        <br />
         <span>
-          <b style={{color: "white"}}>Insert the ID of a universe</b>
+          <b style={{ color: 'white' }}>Insert the ID of a universe</b>
         </span>
         <input
-          style={{backgroundColor: "rgb(67, 60, 104)"}}
+          style={{ backgroundColor: 'rgb(67, 60, 104)', color: "white" }}
           className="form-control me-2"
           type="number"
           min="1"
           max="126"
           onChange={(e) => setID(e.target.value)}
           placeholder="Input ID"
-        /> <br/>
+        />{' '}
+        <br />
         <button className="btn btn-outline-success" onClick={searchUniverse}>
           Search
         </button>
       </div>
 
       <div style={{ textAlign: 'center' }}>
-        <h1 style={{color: "white"}}>{location.name}</h1>
-        <span  style={{color: "white"}}>
+        <h1 style={{ color: 'white' }}>{location.name}</h1>
+        <span style={{ color: 'white' }}>
           <b>Type:</b> {location.type} <b>Dimension:</b> {location.dimension}{' '}
           <b>Population:</b> {location.residents?.length}
         </span>
