@@ -3,6 +3,7 @@ import axios from 'axios';
 import Characters from './Characters';
 import Pagination from './Pagination';
 
+
 const Universe = () => {
   /* Returns a random number between min (included) and max (excluded) */
   const ramdomizer = Math.floor(Math.random() * (127 - 1)) + 1;
