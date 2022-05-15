@@ -46,17 +46,29 @@ const Universe = () => {
           </b>
         </span>
         <div className="input-group">
-        <input
-          style={{ backgroundColor: 'rgb(67, 60, 104)', borderColor: "#433C68" }}
-          className="form-control me-1"
-          type="range"
-          min="1"
-          max="126"
-          step="1"
-          value={id2}
-          onChange={(e) => setID2(e.target.value)}
-        />
-        <span className="input-group-text" style={{backgroundColor: "#198754", color: "white", borderColor: "#198754"}}>{id2}</span>
+          <input
+            style={{
+              backgroundColor: 'rgb(67, 60, 104)',
+              borderColor: '#433C68',
+            }}
+            className="form-control me-1"
+            type="range"
+            min="1"
+            max="126"
+            step="1"
+            value={id2}
+            onChange={(e) => setID2(e.target.value)}
+          />
+          <span
+            className="input-group-text"
+            style={{
+              backgroundColor: '#198754',
+              color: 'white',
+              borderColor: '#198754',
+            }}
+          >
+            {id2}
+          </span>
         </div>
         <br />
         <span>
@@ -66,7 +78,7 @@ const Universe = () => {
           <input
             style={{
               backgroundColor: 'rgb(67, 60, 104)',
-              borderColor: "#433C68",
+              borderColor: '#433C68',
               color: 'white',
               textAlign: 'center',
             }}
