@@ -104,11 +104,11 @@ const Universe = () => {
       </div>
 
       <div className="row justify-content-center" style={{ gap: '10px' }}>
-        <Pagination />
+        {/* <Pagination /> */}
         {charactersURL?.map((URLs) => (
           <Characters url={URLs} key={URLs} />
         ))}
-        <Pagination />
+        {/* <Pagination /> */}
       </div>
     </div>
   );
