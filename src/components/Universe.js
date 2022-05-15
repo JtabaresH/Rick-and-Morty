@@ -28,12 +28,10 @@ const Universe = () => {
   };
 
   const searchUniverse2 = () => {
-    axios
-      .get(`https://rickandmortyapi.com/api/location/${id2}`)
-      .then((res) => {
-        setLocation(res.data);
-        setCharactersURL(res.data.residents);
-      });
+    axios.get(`https://rickandmortyapi.com/api/location/${id2}`).then((res) => {
+      setLocation(res.data);
+      setCharactersURL(res.data.residents);
+    });
   };
   useEffect(() => {
     searchUniverse2();
@@ -61,20 +59,24 @@ const Universe = () => {
         <span>
           <b style={{ color: 'white' }}>Insert the ID of a universe</b>
         </span>
-        <input
-          style={{ backgroundColor: 'rgb(67, 60, 104)', color: 'white', textAlign: "center" }}
-          className="form-control me-2"
-          type="number"
-          min="1"
-          max="126"
-          value={id}
-          onChange={(e) => setID(e.target.value)}
-          placeholder="Input ID"
-        />{' '}
-        <br />
-        <button className="btn btn-outline-success" onClick={searchUniverse}>
-          Search
-        </button>
+        <div className="input-group mb-3">
+          <input
+            style={{
+              backgroundColor: 'rgb(67, 60, 104)',
+              color: 'white',
+              textAlign: 'center',
+            }}
+            className="form-control me-1"
+            type="number"
+            min="1"
+            max="126"
+            value={id}
+            onChange={(e) => setID(e.target.value)}
+          />
+          <button className="btn btn-success" onClick={searchUniverse}>
+            Search
+          </button>
+        </div>
       </div>
 
       <div style={{ textAlign: 'center' }}>
