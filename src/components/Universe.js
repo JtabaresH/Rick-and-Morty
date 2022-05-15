@@ -52,8 +52,9 @@ const Universe = () => {
           min="1"
           max="126"
           step="1"
+          
           onChange={(e) => setID2(e.target.value)}
-        />
+        /> <br/>
         <span>
           <b style={{color: "white"}}>Insert the ID of a universe</b>
         </span>
@@ -65,7 +66,7 @@ const Universe = () => {
           max="126"
           onChange={(e) => setID(e.target.value)}
           placeholder="Input ID"
-        />
+        /> <br/>
         <button className="btn btn-outline-success" onClick={searchUniverse}>
           Search
         </button>
