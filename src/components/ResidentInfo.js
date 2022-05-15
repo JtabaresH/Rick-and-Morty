@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const Characters = ({ url }) => {
+const ResidentInfo = ({ url }) => {
   const [character, setCharacter] = useState({});
 
   useEffect(() => {
@@ -33,4 +33,4 @@ const Characters = ({ url }) => {
   );
 };
 
-export default Characters;
+export default ResidentInfo;

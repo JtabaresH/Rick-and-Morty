@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Characters from './Characters';
+import ResidentInfo from './ResidentInfo';
 import Pagination from './Pagination';
 
 const Universe = () => {
@@ -9,28 +9,28 @@ const Universe = () => {
   const [location, setLocation] = useState([]);
   const [id, setID] = useState(ramdomizer);
   const [id2, setID2] = useState(ramdomizer);
-  const [charactersURL, setCharactersURL] = useState([]);
+  const [residentInfo, setResidentInfo] = useState([]);
 
   useEffect(() => {
     axios
       .get(`https://rickandmortyapi.com/api/location/${ramdomizer}`)
       .then((res) => {
         setLocation(res.data);
-        setCharactersURL(res.data.residents);
+        setResidentInfo(res.data.residents);
       });
   }, []);
 
   const searchUniverse = () => {
     axios.get(`https://rickandmortyapi.com/api/location/${id}`).then((res) => {
       setLocation(res.data);
-      setCharactersURL(res.data.residents);
+      setResidentInfo(res.data.residents);
     });
   };
 
   const searchUniverse2 = () => {
     axios.get(`https://rickandmortyapi.com/api/location/${id2}`).then((res) => {
       setLocation(res.data);
-      setCharactersURL(res.data.residents);
+      setResidentInfo(res.data.residents);
     });
   };
   useEffect(() => {
@@ -108,8 +108,8 @@ const Universe = () => {
 
       <div className="row justify-content-center mt-5" style={{ gap: '10px' }}>
         {/* <Pagination /> */}
-        {charactersURL?.map((URLs) => (
-          <Characters url={URLs} key={URLs} />
+        {residentInfo?.map((URLs) => (
+          <ResidentInfo url={URLs} key={URLs} />
         ))}
         {/* <Pagination /> */}
       </div>
