@@ -45,16 +45,19 @@ const Universe = () => {
             Swipe to move quickly through the multiverse
           </b>
         </span>
+        <div className="input-group">
         <input
           style={{ backgroundColor: 'rgb(67, 60, 104)' }}
-          className="form-control me-2"
+          className="form-control me-1"
           type="range"
           min="1"
           max="126"
           step="1"
           value={id2}
           onChange={(e) => setID2(e.target.value)}
-        />{' '}
+        />
+        <span class="input-group-text">{id2}</span>
+        </div>
         <br />
         <span>
           <b style={{ color: 'white' }}>Insert the ID of a universe</b>
