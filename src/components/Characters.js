@@ -11,16 +11,14 @@ const Characters = ({ url }) => {
   }, [url]);
   return (
     <div
-      className="card"
+      className="card text-center"
       style={{
         maxWidth: '250px',
         boxShadow: '2px 3px 5px grey',
         backgroundColor: '#C6C6C6',
       }}
     >
-      <h5 className="text-nowrap" style={{ textAlign: 'center' }}>
-        {character.name}
-      </h5>
+      <h5 className="text-wrap">{character.name}</h5>
       <img src={character.image} alt="" />
       <span>
         <b>Status:</b> {character.status}

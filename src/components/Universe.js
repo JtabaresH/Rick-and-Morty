@@ -39,7 +39,7 @@ const Universe = () => {
 
   return (
     <div className="container">
-      <div style={{ textAlign: 'center' }} className="justify-content-center">
+      <div className="justify-content-center text-center">
         <span>
           <b style={{ color: 'white' }}>
             Swipe to move quickly through the multiverse
@@ -83,7 +83,7 @@ const Universe = () => {
         </div>
       </div>
 
-      <div style={{ textAlign: 'center' }}>
+      <div className="text-center">
         <h1 style={{ color: 'white' }}>{location.name}</h1>
         <span style={{ color: 'white' }}>
           <b>Type:</b> {location.type} <b>Dimension:</b> {location.dimension}{' '}
