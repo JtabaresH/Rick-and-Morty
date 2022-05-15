@@ -12,7 +12,7 @@ const Characters = ({ url }) => {
   return (
     <div
       className="card"
-      style={{ maxWidth: '250px', boxShadow: '2px 3px 5px grey' }}
+      style={{ maxWidth: '250px', boxShadow: '2px 3px 5px grey', backgroundColor: "#C6C6C6" }}
     >
       <h5 className="text-nowrap" style={{ textAlign: 'center' }}>
         {character.name}

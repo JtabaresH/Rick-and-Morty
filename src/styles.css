@@ -1,3 +1,7 @@
+body {
+  background-color: rgb(29, 16, 92);
+}
+
 .container-characters {
   display: flex;
   flex-direction: row;

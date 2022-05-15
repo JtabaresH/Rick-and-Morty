@@ -43,9 +43,10 @@ const Universe = () => {
     <div className="container">
       <div style={{ textAlign: 'center' }}>
         <span>
-          <b>Swipe to move quickly through the multiverse</b>
+          <b style={{color: "white"}}>Swipe to move quickly through the multiverse</b>
         </span>
         <input
+          style={{backgroundColor: "rgb(67, 60, 104)"}}
           className="form-control me-2"
           type="range"
           min="1"
@@ -54,9 +55,10 @@ const Universe = () => {
           onChange={(e) => setID2(e.target.value)}
         />
         <span>
-          <b>Insert the ID of a universe</b>
+          <b style={{color: "white"}}>Insert the ID of a universe</b>
         </span>
         <input
+          style={{backgroundColor: "rgb(67, 60, 104)"}}
           className="form-control me-2"
           type="number"
           min="1"
@@ -70,8 +72,8 @@ const Universe = () => {
       </div>
 
       <div style={{ textAlign: 'center' }}>
-        <h1>{location.name}</h1>
-        <span>
+        <h1 style={{color: "white"}}>{location.name}</h1>
+        <span  style={{color: "white"}}>
           <b>Type:</b> {location.type} <b>Dimension:</b> {location.dimension}{' '}
           <b>Population:</b> {location.residents?.length}
         </span>
