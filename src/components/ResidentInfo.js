@@ -27,6 +27,9 @@ const ResidentInfo = ({ url }) => {
         <b>Specie/Gender:</b> {character.species} - {character.gender}
       </span>
       <span>
+        <b>Origin:</b> {character.origin?.name}
+      </span>
+      <span>
         <b>Episodes where appear:</b> {character.episode?.length}
       </span>
     </div>
