@@ -7,7 +7,7 @@ const Universe = () => {
   /* Returns a random number between min (included) and max (excluded) */
   const ramdomizer = Math.floor(Math.random() * (126 + 1));
   const [location, setLocation] = useState([]);
-  const [id, setID] = useState();
+  const [id, setID] = useState(ramdomizer);
   const [id2, setID2] = useState(ramdomizer);
   const [charactersURL, setCharactersURL] = useState([]);
 
@@ -54,6 +54,7 @@ const Universe = () => {
           min="1"
           max="126"
           step="1"
+          value={id2}
           onChange={(e) => setID2(e.target.value)}
         />{' '}
         <br />
@@ -61,11 +62,12 @@ const Universe = () => {
           <b style={{ color: 'white' }}>Insert the ID of a universe</b>
         </span>
         <input
-          style={{ backgroundColor: 'rgb(67, 60, 104)', color: 'white' }}
+          style={{ backgroundColor: 'rgb(67, 60, 104)', color: 'white', textAlign: "center" }}
           className="form-control me-2"
           type="number"
           min="1"
           max="126"
+          value={id}
           onChange={(e) => setID(e.target.value)}
           placeholder="Input ID"
         />{' '}
