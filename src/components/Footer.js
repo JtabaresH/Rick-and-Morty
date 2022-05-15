@@ -1,17 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React from 'react';
+import quotes from '../quotes.json';
 
 const Footer = () => {
   const ramdomPhrase = Math.floor(Math.random() * 20);
-  const [phrase, setPhrase] = useState();
 
-  useEffect(() => {
-    axios
-      .get('https://rick-and-morty-api-phrases.herokuapp.com/phrases/en_us')
-      .then((res) => {
-        setPhrase(res.data);
-      });
-  }, []);
   return (
     <div
       className="card-footer text-center"
@@ -19,10 +11,10 @@ const Footer = () => {
         backgroundColor: 'rgb(67, 60, 104)',
       }}
     >
-      <span style={{ color: 'white' }}>{phrase?.[ramdomPhrase].phrase}</span>{' '}
+      <span style={{ color: 'white' }}>{quotes[ramdomPhrase].phrase}</span>{' '}
       <br />
       <span style={{ color: 'white' }}>
-        Author: {phrase?.[ramdomPhrase].author}
+        Author: {quotes[ramdomPhrase].author}
       </span>
     </div>
   );
