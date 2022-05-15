@@ -1,5 +1,5 @@
 import React from 'react';
-import quotes from '../quotes.json';
+import quotes from './quotes.json';
 
 const Footer = () => {
   const ramdomPhrase = Math.floor(Math.random() * 20);
