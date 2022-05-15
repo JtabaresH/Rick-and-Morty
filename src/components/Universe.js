@@ -95,7 +95,10 @@ const Universe = () => {
         </div>
       </div>
 
-      <div className="text-center">
+      <div
+        className="text-center rounded-3"
+        style={{ backgroundColor: 'rgb(67, 60, 104)' }}
+      >
         <h1 style={{ color: 'white' }}>{location.name}</h1>
         <span style={{ color: 'white' }}>
           <b>Type:</b> {location.type} <b>Dimension:</b> {location.dimension}{' '}
@@ -103,7 +106,7 @@ const Universe = () => {
         </span>
       </div>
 
-      <div className="row justify-content-center" style={{ gap: '10px' }}>
+      <div className="row justify-content-center mt-5" style={{ gap: '10px' }}>
         {/* <Pagination /> */}
         {charactersURL?.map((URLs) => (
           <Characters url={URLs} key={URLs} />
