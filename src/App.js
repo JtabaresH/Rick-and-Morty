@@ -19,7 +19,7 @@ export default function App() {
         }}
       />
       <Navbar title="Universes of Rick and Morty" />
-      <Universe />
+      <Universe /> <br/>
       <Footer />
     </>
   );

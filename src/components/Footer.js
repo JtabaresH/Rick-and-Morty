@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const Footer = () => {
-  const ramdomPhrase = Math.floor(Math.random() * (20 + 1));
+  const ramdomPhrase = Math.floor(Math.random() * 20);
   const [phrase, setPhrase] = useState();
 
   useEffect(() => {
