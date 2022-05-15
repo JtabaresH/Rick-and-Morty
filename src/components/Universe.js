@@ -7,8 +7,8 @@ const Universe = () => {
   /* Returns a random number between min (included) and max (excluded) */
   const ramdomizer = Math.floor(Math.random() * (126 + 1));
   const [location, setLocation] = useState([]);
-  const [id, setID] = useState("");
-  const [id2, setID2] = useState("");
+  const [id, setID] = useState();
+  const [id2, setID2] = useState(ramdomizer);
   const [charactersURL, setCharactersURL] = useState([]);
 
   useEffect(() => {
@@ -28,19 +28,20 @@ const Universe = () => {
   };
 
   const searchUniverse2 = () => {
-    axios.get(`https://rickandmortyapi.com/api/location/${id2}`).then((res) => {
-      setLocation(res.data);
-      setCharactersURL(res.data.residents);
-    });
+    axios
+      .get(`https://rickandmortyapi.com/api/location/${id2}`)
+      .then((res) => {
+        setLocation(res.data);
+        setCharactersURL(res.data.residents);
+      });
   };
-
   useEffect(() => {
     searchUniverse2();
   }, [id2]);
 
   return (
     <div className="container">
-      <div style={{ textAlign: 'center' }}>
+      <div style={{ textAlign: 'center' }} className="justify-content-center">
         <span>
           <b style={{ color: 'white' }}>
             Swipe to move quickly through the multiverse
@@ -60,7 +61,7 @@ const Universe = () => {
           <b style={{ color: 'white' }}>Insert the ID of a universe</b>
         </span>
         <input
-          style={{ backgroundColor: 'rgb(67, 60, 104)', color: "white" }}
+          style={{ backgroundColor: 'rgb(67, 60, 104)', color: 'white' }}
           className="form-control me-2"
           type="number"
           min="1"
