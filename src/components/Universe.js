@@ -8,7 +8,6 @@ const Universe = () => {
   const [location, setLocation] = useState([]);
   const [id, setID] = useState(ramdomizer);
   const [id2, setID2] = useState(ramdomizer);
-  const [residentInfo, setResidentInfo] = useState([]);
   const [charactersURL, setCharactersURL] = useState([]);
   const [page, setPage] = useState(1);
 
@@ -25,7 +24,6 @@ const Universe = () => {
   const searchUniverse = () => {
     axios.get(`https://rickandmortyapi.com/api/location/${id}`).then((res) => {
       setLocation(res.data);
-      setResidentInfo(res.data.residents);
       setCharactersURL(res.data.residents);
     });
   };
@@ -33,9 +31,14 @@ const Universe = () => {
   const searchUniverse2 = () => {
     axios.get(`https://rickandmortyapi.com/api/location/${id2}`).then((res) => {
       setLocation(res.data);
-      setResidentInfo(res.data.residents);
       setCharactersURL(res.data.residents);
     });
+  };
+
+  const searchWithEnter = (e) => {
+    if (e.keyCode === 13) {
+      searchUniverse();
+    }
   };
 
   useEffect(() => {
@@ -57,6 +60,7 @@ const Universe = () => {
 
   return (
     <div className="container">
+      {/* Swipe */}
       <div style={{ textAlign: 'center' }}>
         <span>
           <b style={{ color: 'white' }}>
@@ -89,6 +93,7 @@ const Universe = () => {
           </span>
         </div>
         <br />
+        {/* Name of universe */}
         <span>
           <b style={{ color: 'white' }}>Insert the ID of a universe</b>
         </span>
@@ -106,6 +111,7 @@ const Universe = () => {
             max="126"
             value={id}
             onChange={(e) => setID(e.target.value)}
+            onKeyDown={searchWithEnter}
           />
           <button className="btn btn-success" onClick={searchUniverse}>
             Search
