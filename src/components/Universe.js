@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Characters from './Characters';
-
+import ResidentInfo from './ResidentInfo'
 
 const Universe = () => {
   /* Returns a random number between min (included) and max (excluded) */
@@ -56,38 +56,41 @@ const Universe = () => {
     <div className="container">
       <div style={{ textAlign: 'center' }}>
         <span>
-          <b style={{color: "white"}}>Swipe to move quickly through the multiverse</b>
+          <b style={{ color: 'white' }}>
+            Swipe to move quickly through the multiverse
+          </b>
         </span>
         <input
-          style={{backgroundColor: "rgb(67, 60, 104)"}}
+          style={{ backgroundColor: 'rgb(67, 60, 104)' }}
           className="form-control me-2"
           type="range"
           min="1"
           max="126"
           step="1"
-          
           onChange={(e) => setID2(e.target.value)}
-        /> <br/>
+        />{' '}
+        <br />
         <span>
-          <b style={{color: "white"}}>Insert the ID of a universe</b>
+          <b style={{ color: 'white' }}>Insert the ID of a universe</b>
         </span>
         <input
-          style={{backgroundColor: "rgb(67, 60, 104)"}}
+          style={{ backgroundColor: 'rgb(67, 60, 104)' }}
           className="form-control me-2"
           type="number"
           min="1"
           max="126"
           onChange={(e) => setID(e.target.value)}
           placeholder="Input ID"
-        /> <br/>
+        />{' '}
+        <br />
         <button className="btn btn-outline-success" onClick={searchUniverse}>
           Search
         </button>
       </div>
 
       <div style={{ textAlign: 'center' }}>
-        <h1 style={{color: "white"}}>{location.name}</h1>
-        <span  style={{color: "white"}}>
+        <h1 style={{ color: 'white' }}>{location.name}</h1>
+        <span style={{ color: 'white' }}>
           <b>Type:</b> {location.type} <b>Dimension:</b> {location.dimension}{' '}
           <b>Population:</b> {location.residents?.length}
         </span>
