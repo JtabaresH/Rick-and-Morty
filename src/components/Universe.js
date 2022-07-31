@@ -70,7 +70,7 @@ const Universe = () => {
         <div className="input-group">
           <input
             style={{
-              backgroundColor: 'rgb(67, 60, 104)',
+              backgroundColor: '#8C8C8C',
               borderColor: '#433C68',
             }}
             className="form-control me-1"
@@ -84,7 +84,7 @@ const Universe = () => {
           <span
             className="input-group-text"
             style={{
-              backgroundColor: '#198754',
+              backgroundColor: '#90C374',
               color: 'white',
               borderColor: '#198754',
             }}
@@ -100,7 +100,7 @@ const Universe = () => {
         <div className="input-group mb-3">
           <input
             style={{
-              backgroundColor: 'rgb(67, 60, 104)',
+              backgroundColor: '#8C8C8C',
               borderColor: '#433C68',
               color: 'white',
               textAlign: 'center',
@@ -113,7 +113,11 @@ const Universe = () => {
             onChange={(e) => setID(e.target.value)}
             onKeyDown={searchWithEnter}
           />
-          <button className="btn btn-success" onClick={searchUniverse}>
+          <button
+            className="btn btn-success"
+            style={{ backgroundColor: '#90C374' }}
+            onClick={searchUniverse}
+          >
             Search
           </button>
         </div>

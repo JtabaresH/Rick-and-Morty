@@ -15,7 +15,7 @@ const ResidentInfo = ({ url }) => {
       style={{
         maxWidth: '250px',
         boxShadow: '2px 3px 5px grey',
-        backgroundColor: '#C6C6C6',
+        backgroundColor: '#8C8C8C',
       }}
     >
       <h5 className="text-wrap">{character.name}</h5>
