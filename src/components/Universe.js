@@ -5,10 +5,11 @@ import ResidentInfo from './ResidentInfo'
 
 const Universe = () => {
   /* Returns a random number between min (included) and max (excluded) */
-  const ramdomizer = Math.floor(Math.random() * (127 - 1)) + 1;
+  const ramdomizer = Math.floor(Math.random() * (126 - 1)) + 1;
   const [location, setLocation] = useState([]);
-  const [id, setID] = useState();
-  const [id2, setID2] = useState();
+  const [id, setID] = useState(ramdomizer);
+  const [id2, setID2] = useState(ramdomizer);
+  const [residentInfo, setResidentInfo] = useState([]);
   const [charactersURL, setCharactersURL] = useState([]);
   const [page, setPage] = useState(1);
 
@@ -30,6 +31,7 @@ const Universe = () => {
       .get(`https://rickandmortyapi.com/api/location/${ramdomizer}`)
       .then((res) => {
         setLocation(res.data);
+        setResidentInfo(res.data.residents);
         setCharactersURL(res.data.residents);
       });
   }, []);
@@ -37,6 +39,7 @@ const Universe = () => {
   const searchUniverse = () => {
     axios.get(`https://rickandmortyapi.com/api/location/${id}`).then((res) => {
       setLocation(res.data);
+      setResidentInfo(res.data.residents);
       setCharactersURL(res.data.residents);
     });
   };
@@ -44,6 +47,7 @@ const Universe = () => {
   const searchUniverse2 = () => {
     axios.get(`https://rickandmortyapi.com/api/location/${id2}`).then((res) => {
       setLocation(res.data);
+      setResidentInfo(res.data.residents);
       setCharactersURL(res.data.residents);
     });
   };
