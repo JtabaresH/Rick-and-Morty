@@ -63,32 +63,54 @@ const Universe = () => {
             Swipe to move quickly through the multiverse
           </b>
         </span>
-        <input
-          style={{ backgroundColor: 'rgb(67, 60, 104)' }}
-          className="form-control me-2"
-          type="range"
-          min="1"
-          max="126"
-          step="1"
-          onChange={(e) => setID2(e.target.value)}
-        />{' '}
+        <div className="input-group">
+          <input
+            style={{
+              backgroundColor: 'rgb(67, 60, 104)',
+              borderColor: '#433C68',
+            }}
+            className="form-control me-1"
+            type="range"
+            min="1"
+            max="126"
+            step="1"
+            value={id2}
+            onChange={(e) => setID2(e.target.value)}
+          />
+          <span
+            className="input-group-text"
+            style={{
+              backgroundColor: '#198754',
+              color: 'white',
+              borderColor: '#198754',
+            }}
+          >
+            {id2}
+          </span>
+        </div>
         <br />
         <span>
           <b style={{ color: 'white' }}>Insert the ID of a universe</b>
         </span>
-        <input
-          style={{ backgroundColor: 'rgb(67, 60, 104)' }}
-          className="form-control me-2"
-          type="number"
-          min="1"
-          max="126"
-          onChange={(e) => setID(e.target.value)}
-          placeholder="Input ID"
-        />{' '}
-        <br />
-        <button className="btn btn-outline-success" onClick={searchUniverse}>
-          Search
-        </button>
+        <div className="input-group mb-3">
+          <input
+            style={{
+              backgroundColor: 'rgb(67, 60, 104)',
+              borderColor: '#433C68',
+              color: 'white',
+              textAlign: 'center',
+            }}
+            className="form-control me-1"
+            type="number"
+            min="1"
+            max="126"
+            value={id}
+            onChange={(e) => setID(e.target.value)}
+          />
+          <button className="btn btn-success" onClick={searchUniverse}>
+            Search
+          </button>
+        </div>
       </div>
 
       <div style={{ textAlign: 'center' }}>
