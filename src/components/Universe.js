@@ -70,7 +70,7 @@ const Universe = () => {
         <div className="input-group">
           <input
             style={{
-              backgroundColor: '#8C8C8C',
+              backgroundColor: '#515151',
               borderColor: '#433C68',
             }}
             className="form-control me-1"
@@ -100,7 +100,7 @@ const Universe = () => {
         <div className="input-group mb-3">
           <input
             style={{
-              backgroundColor: '#8C8C8C',
+              backgroundColor: '#515151',
               borderColor: '#433C68',
               color: 'white',
               textAlign: 'center',
@@ -135,14 +135,14 @@ const Universe = () => {
         <button
           onClick={() => setPage(1)}
           disabled={page === 1}
-          className="btn btn-outline-primary"
+          className="btn btn-outline-success"
         >
           First Page
         </button>
         <button
           onClick={() => setPage(page - 1)}
           disabled={page === 1}
-          className="btn btn-outline-primary"
+          className="btn btn-outline-success"
         >
           Prev
         </button>
@@ -151,7 +151,7 @@ const Universe = () => {
           <button
             key={numbers}
             onClick={() => setPage(numbers)}
-            className="btn btn-outline-primary"
+            className="btn btn-outline-success"
           >
             {numbers}
           </button>
@@ -160,14 +160,14 @@ const Universe = () => {
         <button
           onClick={() => setPage(page + 1)}
           disabled={page === lastPage}
-          className="btn btn-outline-primary"
+          className="btn btn-outline-success"
         >
           Next
         </button>
         <button
           onClick={() => setPage(lastPage)}
           disabled={page === lastPage}
-          className="btn btn-outline-primary"
+          className="btn btn-outline-success"
         >
           Last Page
         </button>
@@ -183,14 +183,14 @@ const Universe = () => {
         <button
           onClick={() => setPage(1)}
           disabled={page === 1}
-          className="btn btn-outline-primary"
+          className="btn btn-outline-success"
         >
           First Page
         </button>
         <button
           onClick={() => setPage(page - 1)}
           disabled={page === 1}
-          className="btn btn-outline-primary"
+          className="btn btn-outline-success"
         >
           Prev
         </button>
@@ -199,7 +199,7 @@ const Universe = () => {
           <button
             key={numbers}
             onClick={() => setPage(numbers)}
-            className="btn btn-outline-primary"
+            className="btn btn-outline-success"
           >
             {numbers}
           </button>
@@ -208,14 +208,14 @@ const Universe = () => {
         <button
           onClick={() => setPage(page + 1)}
           disabled={page === lastPage}
-          className="btn btn-outline-primary"
+          className="btn btn-outline-success"
         >
           Next
         </button>
         <button
           onClick={() => setPage(lastPage)}
           disabled={page === lastPage}
-          className="btn btn-outline-primary"
+          className="btn btn-outline-success"
         >
           Last Page
         </button>
