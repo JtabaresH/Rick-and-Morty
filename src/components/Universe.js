@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Characters from './Characters';
-import ResidentInfo from './ResidentInfo'
+import ResidentInfo from './ResidentInfo';
 
 const Universe = () => {
   /* Returns a random number between min (included) and max (excluded) */
@@ -12,19 +11,6 @@ const Universe = () => {
   const [residentInfo, setResidentInfo] = useState([]);
   const [charactersURL, setCharactersURL] = useState([]);
   const [page, setPage] = useState(1);
-
-  const charactersNumbers = 8;
-  const lastIndex = charactersNumbers * page;
-  const firstIndex = lastIndex - charactersNumbers;
-  const charactersPaginated = charactersURL.slice(firstIndex, lastIndex);
-  const lastPage = Math.ceil(charactersURL?.length / charactersNumbers);
-  const numberPages = [];
-
-  for (let i = 1; i <= lastPage; i++) {
-    if (i < page + 5 && i > page - 5) {
-      numberPages.push(i);
-    }
-  }
 
   useEffect(() => {
     axios
@@ -55,6 +41,19 @@ const Universe = () => {
   useEffect(() => {
     searchUniverse2();
   }, [id2]);
+
+  const charactersNumbers = 8;
+  const lastIndex = charactersNumbers * page;
+  const firstIndex = lastIndex - charactersNumbers;
+  const charactersPaginated = charactersURL.slice(firstIndex, lastIndex);
+  const lastPage = Math.ceil(charactersURL?.length / charactersNumbers);
+  const numberPages = [];
+
+  for (let i = 1; i <= lastPage; i++) {
+    if (i < page + 5 && i > page - 5) {
+      numberPages.push(i);
+    }
+  }
 
   return (
     <div className="container">
@@ -144,7 +143,7 @@ const Universe = () => {
       {/* Characters array */}
       <div className="row justify-content-center" style={{ gap: '10px' }}>
         {charactersPaginated?.map((URLs) => (
-          <Characters url={URLs} key={URLs} />
+          <ResidentInfo url={URLs} key={URLs} />
         ))}
       </div>
       {/* Inferior pagination */}
