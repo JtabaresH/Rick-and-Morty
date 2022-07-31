@@ -8,7 +8,7 @@ const Footer = () => {
     <div
       className="card-footer text-center"
       style={{
-        backgroundColor: 'rgb(67, 60, 104)',
+        backgroundColor: '#000000',
       }}
     >
       <span style={{ color: 'white' }}>{quotes[ramdomPhrase].phrase}</span>{' '}
