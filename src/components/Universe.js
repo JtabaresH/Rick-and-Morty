@@ -8,6 +8,7 @@ const Universe = () => {
   const [location, setLocation] = useState([]);
   const [id, setID] = useState(ramdomizer);
   const [id2, setID2] = useState(ramdomizer);
+  const [residentInfo, setResidentInfo] = useState([]);
   const [charactersURL, setCharactersURL] = useState([]);
   const [page, setPage] = useState(1);
 
