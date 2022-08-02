@@ -13,11 +13,10 @@ body {
   justify-content: center;
   align-items: center;
   position: absolute;
-  z-index: 1;
 }
 .lightning-a {
   opacity: 0.5;
-  animation: lightning 2s infinite alternate;
+  animation: lightning 10s infinite alternate;
 }
 
 @keyframes lightning {

@@ -10,7 +10,7 @@ export default function App() {
   return (
     <>
       <img
-        src={bannerGif}
+        src={banner}
         alt=""
         style={{
           width: '100%',
