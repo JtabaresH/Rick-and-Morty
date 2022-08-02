@@ -1,5 +1,5 @@
 body {
-  background-color: #000000;
+  background-color: black;
 }
 
 .container-characters {
@@ -8,155 +8,43 @@ body {
   justify-content: center;
 }
 
-.front {
-  position: relative;
-  z-index: 99999;
-}
-
-.bg {
+.lightning {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
-  top: 0;
-  left: 0;
-  /*   opacity: 0.5; */
-  height: 150px;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-.purple1 {
-  z-index: 0;
-  background-color: #6b2fd6;
-}
-
-.white1 {
   z-index: 1;
-  background: rgb(188, 159, 240);
-  background: radial-gradient(circle, #8b4cfa 0%, rgba(0, 0, 0, 0) 65%);
 }
-
-.white2 {
-  z-index: 1;
-  background: rgb(188, 159, 240);
-  background: radial-gradient(circle, #8b4cfa 0%, rgba(0, 0, 0, 0) 65%);
-}
-
-.black {
-  background: black;
-  z-index: 2;
-  opacity: 0.55;
-}
-
-.white-container {
-  z-index: 3;
-}
-
-.black-container {
-  z-index: 4;
-}
-
-.white-shape {
-  position: absolute;
-  height: 150px;
-  width: 100%;
-}
-
-.black-shape {
-  position: absolute;
-  height: 150px;
-  width: 100%;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 0) 65%
-  );
-}
-
-.shape1 {
-  top: -400px;
-  left: -400px;
-}
-
-.shape2 {
-  bottom: -400px;
-  right: -400px;
-}
-
-.shape3 {
-  bottom: -100px;
-  left: -300px;
-}
-
-.shape4 {
-  top: -200px;
-  right: -300px;
-}
-
-.shape5 {
-  top: -600px;
-  right: 100px;
-}
-
-.shape6 {
-  left: -200px;
-  bottom: -600px;
-}
-
-.overlay {
-  z-index: 10;
-  background: black;
-  animation-duration: 10s;
-  animation-name: lightning;
-  animation-iteration-count: infinite;
+.lightning-a {
+  opacity: 0.5;
+  animation: lightning 2s infinite alternate;
 }
 
 @keyframes lightning {
-  0% {
+  0%,
+  19%,
+  21%,
+  59%,
+  61%,
+  79%,
+  81% {
     opacity: 0;
   }
 
-  10% {
-    opacity: 1;
-  }
-
-  11% {
-    opacity: 0;
-  }
-
-  21% {
-    opacity: 1;
-  }
-
-  22% {
-    opacity: 0;
-  }
-
-  37% {
-    opacity: 1;
-  }
-
-  38% {
-    opacity: 0;
-  }
-
-  49% {
-    opacity: 1;
-  }
-
-  79% {
-    opacity: 1;
-  }
-
+  20%,
+  60%,
   80% {
+    opacity: 0.5;
+  }
+
+  /* folgendes optional */
+  39%,
+  41% {
     opacity: 0;
+    transform: none;
   }
-
-  88% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 1;
+  40% {
+    opacity: 0.5;
+    transform: rotate3d(0, 1, 0, 180deg);
   }
 }
