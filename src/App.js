@@ -4,13 +4,14 @@ import Universe from './components/Universe';
 import Footer from './components/Footer';
 import banner from './assets/images/banner.svg';
 import bannerGif from './assets/images/rick-morty.gif';
+import rayo from './assets/images/lighting.png'
 import './styles.css';
 
 export default function App() {
   return (
     <>
       <img
-        src={banner}
+        src={bannerGif}
         alt=""
         style={{
           width: '100%',
@@ -21,7 +22,7 @@ export default function App() {
         }}
       />
       <div className="lightning lightning-a">
-        <img src="https://www.onlygfx.com/wp-content/uploads/2018/08/10-realistic-lightning-bolt-1.png" />
+        <img src={rayo} />
       </div>
       <Navbar title="Universes of Rick and Morty" />
       <Universe /> <br />
