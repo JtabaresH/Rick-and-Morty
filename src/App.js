@@ -21,7 +21,7 @@ export default function App() {
         }}
       />
       <div className="lightning lightning-a">
-        <img src="https://www.onlygfx.com/wp-content/uploads/2018/08/10-realistic-lightning-bolt-1.png" />
+        <img src="https://www.onlygfx.com/wp-content/uploads/2018/08/10-realistic-lightning-bolt-2.png" />
       </div>
       <Navbar title="Universes of Rick and Morty" />
       <Universe /> <br />

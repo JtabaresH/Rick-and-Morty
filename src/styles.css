@@ -16,7 +16,7 @@ body {
 }
 .lightning-a {
   opacity: 0.5;
-  animation: lightning 10s infinite alternate;
+  animation: lightning 8s infinite alternate;
 }
 
 @keyframes lightning {
@@ -44,6 +44,6 @@ body {
   }
   40% {
     opacity: 0.5;
-    transform: rotate3d(0, 1, 0, 180deg);
+    transform: rotate3d(0, 1, 0, 90deg);
   }
 }
