@@ -9,12 +9,13 @@ import './styles.css';
 export default function App() {
   return (
     <>
+      <div></div>
       <img
         src={bannerGif}
         alt=""
         style={{
           width: '100%',
-          height: '250px',
+          height: '150px',
           preserveAspectRatio: 'none',
           margin: '0',
           padding: '0',

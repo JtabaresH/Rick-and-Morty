@@ -4,6 +4,10 @@
   "private": true,
   "dependencies": {
     "axios": "^0.27.2",
+    "emotion/react": "*",
+    "emotion/styled": "*",
+    "jQuery": "^1.7.4",
+    "mui/material": "*",
     "react": "^18.1.0",
     "react-dom": "^18.1.0"
   },
