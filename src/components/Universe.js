@@ -9,7 +9,6 @@ const Universe = () => {
   const [id, setID] = useState(ramdomizer);
   const [id2, setID2] = useState(ramdomizer);
   const [residentInfo, setResidentInfo] = useState([]);
-  const [charactersURL, setCharactersURL] = useState([]);
   const [page, setPage] = useState(1);
 
   useEffect(() => {
@@ -18,21 +17,20 @@ const Universe = () => {
       .then((res) => {
         setLocation(res.data);
         setResidentInfo(res.data.residents);
-        setCharactersURL(res.data.residents);
       });
   }, []);
 
   const searchUniverse = () => {
     axios.get(`https://rickandmortyapi.com/api/location/${id}`).then((res) => {
       setLocation(res.data);
-      setCharactersURL(res.data.residents);
+      setResidentInfo(res.data.residents);
     });
   };
 
   const searchUniverse2 = () => {
     axios.get(`https://rickandmortyapi.com/api/location/${id2}`).then((res) => {
       setLocation(res.data);
-      setCharactersURL(res.data.residents);
+      setResidentInfo(res.data.residents);
     });
   };
 
@@ -49,8 +47,8 @@ const Universe = () => {
   const charactersNumbers = 8;
   const lastIndex = charactersNumbers * page;
   const firstIndex = lastIndex - charactersNumbers;
-  const charactersPaginated = charactersURL.slice(firstIndex, lastIndex);
-  const lastPage = Math.ceil(charactersURL?.length / charactersNumbers);
+  const charactersPaginated = residentInfo.slice(firstIndex, lastIndex);
+  const lastPage = Math.ceil(residentInfo?.length / charactersNumbers);
   const numberPages = [];
 
   for (let i = 1; i <= lastPage; i++) {
